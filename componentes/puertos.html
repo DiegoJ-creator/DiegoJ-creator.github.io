@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Puertos de Conexion</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Puertos de Conexion</h1>
+                <p class="subtitle">Guia de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/puertos.jpg" alt="Imagen detallada de Puertos de Conexi�n">
+            </div>
+            <div class="component-info">
+                <h2>Analisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">Dispositivos no reconocidos (USB, Audio)</button>
+                    <button class="tab-link" data-tab="falla2">Problemas de Red (Ethernet, Wi-Fi)</button>
+                    <button class="tab-link" data-tab="falla3">Fallas en Puertos de Video (HDMI, DP)</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Sintoma: Dispositivos USB o de Audio no reconocidos / Fallas intermitentes</h3>
+                        <p>Los dispositivos conectados a puertos USB (mouse, teclado, memorias, impresoras) no funcionan o se desconectan aleatoriamente. El audio no se escucha o los microfonos no funcionan a traves de los puertos de audio (jack 3.5mm).</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Probar en Otro Puerto:</strong> Conecta el dispositivo a otro puerto USB o de audio para descartar que sea un problema del puerto especofico.</li>
+                            <li><strong>Reiniciar la PC:</strong> A veces, un simple reinicio puede resolver problemas temporales de reconocimiento de hardware.</li>
+                            <li><strong>Reinstalar Drivers:</strong> Abre el **Administrador de Dispositivos**, expande "Controladoras de bus serie universal" o "Entradas y salidas de audio", busca los dispositivos con problemas, haz clic derecho y selecciona "Desinstalar dispositivo". Luego reinicia la PC.</li>
+                            <li><strong>Actualizar Drivers de Chipset:</strong> Visita el sitio web del fabricante de tu placa madre y descarga los ultimos drivers para el chipset, USB y/o audio.</li>
+                            <li><strong>Inspeccion Visual:</strong> Busca pines doblados, suciedad o datos fisicos dentro del puerto.</li>
+                        </ul>
+                       <img src="../imagenes/puertos-de-una-computadora-1.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Sintoma: Problemas de Conexion a Internet (Ethernet, Wi-Fi)</h3>
+                        <p>No hay conexion a internet a traves del cable Ethernet, la conexion Wi-Fi es intermitente o no detecta redes, o la velocidad es anormalmente baja.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Cables y Router:</strong> Asegurate de que el cable Ethernet esta bien conectado en ambos extremos y que tu router/modem esta funcionando correctamente. Reinicia el router.</li>
+                            <li><strong>Diagnostico de Red de Windows:</strong> Utiliza el solucionador de problemas de red integrado de Windows (clic derecho en el icono de red en la barra de tareas).</li>
+                            <li><strong>Actualizar Drivers de Adaptador:</strong> En el **Administrador de Dispositivos**, expande "Adaptadores de red", busca tu tarjeta Ethernet o Wi-Fi, y actualiza los drivers desde el sitio web del fabricante (Intel, Realtek, etc.).</li>
+                            <li><strong>Restablecer Red:</strong> En Windows, ve a Configuracion > Red e Internet > Estado > Restablecimiento de red. Esto reinstalara los adaptadores de red.</li>
+                            <li><strong>Probar con Otro Cable/Adaptador USB:</strong> Si es posible, prueba con un cable Ethernet diferente o un adaptador Wi-Fi USB para descartar una falla del puerto o la tarjeta de red integrada.</li>
+                        </ul>
+						<img src="../imagenes/ethernet.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Sintoma: Fallas en Puertos de Video (HDMI, DisplayPort, DVI, VGA)</h3>
+                        <p>El monitor no recibe señal, la imagen tiene colores incorrectos, parpadea o presenta resolucion incorrecta al usar una conexion de video especifica.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Cable de Video:</strong> Prueba con un cable de video diferente y asegurate de que este firmemente conectado tanto al PC/GPU como al monitor.</li>
+                            <li><strong>Probar con Otra Salida:</strong> Conecta el monitor a otra salida de video disponible en tu tarjeta grafica o a los puertos de video integrados de la placa madre (si tu CPU tiene graficos integrados).</li>
+                            <li><strong>Actualizar Drivers de Graficos:</strong> Los drivers de la tarjeta grafica (NVIDIA, AMD) o los graficos integrados (Intel) son cruciales. Asegurate de tener la ultima version instalada.</li>
+                            <li><strong>Revisar Configuracion del Monitor:</strong> Asegurate de que el monitor esta configurado en la entrada correcta (HDMI1, DisplayPort, etc.).</li>
+                            <li><strong>Inspeccion Fisica:</strong> Busca pines doblados o datos en el puerto de video tanto en el PC como en el monitor.</li>
+                        </ul>
+						<img src="../imagenes/cables.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<main>
+    <!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+              <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/W9sXVnhtMgQ" 
+    title="YouTube Shorts video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+               <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/diDPVC8U8h4" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

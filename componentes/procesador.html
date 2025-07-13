@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Procesador (CPU)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Procesador (CPU)</h1>
+                <p class="subtitle">Guía de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/tipos-procesadores-intel.jpg" alt="Imagen detallada del Procesador">
+            </div>
+            <div class="component-info">
+                <h2>Análisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">Sobrecalentamiento</button>
+                    <button class="tab-link" data-tab="falla2">Rendimiento Lento</button>
+                    <button class="tab-link" data-tab="falla3">PC no enciende</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Síntoma: Sobrecalentamiento</h3>
+                        <p>La computadora se apaga de repente, especialmente bajo carga. El chasis se siente muy caliente.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Limpieza de Ventiladores:</strong> Usa aire comprimido para limpiar los ventiladores y disipadores.</li>
+                            <li><strong>Reemplazo de Pasta Térmica:</strong> Esencial si el equipo tiene varios años.</li>
+                            <li><strong>Mejorar Flujo de Aire:</strong> Asegúrate de que las rejillas de ventilación no estén bloqueadas.</li>
+                        </ul>
+						<img src="../imagenes/limpiando disipador.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                        <img src="../imagenes/pasta termica.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+						
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Síntoma: Rendimiento Inesperadamente Lento</h3>
+                        <p>Tareas que antes eran rápidas ahora tardan mucho. El sistema se siente "pegado" o con lag.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Uso de CPU:</strong> Usa el Administrador de Tareas para ver si un proceso consume el 100% del CPU.</li>
+                            <li><strong>Análisis de Malware:</strong> Un virus puede estar usando recursos en segundo plano.</li>
+                            <li><strong>Considerar un Upgrade:</strong> Si el CPU es muy antiguo, puede que ya no sea suficiente.</li>
+                        </ul>
+						<img src="../imagenes/malware.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Síntoma: La computadora no enciende</h3>
+                        <p>Al presionar el botón de encendido, no hay imagen en pantalla y el sistema no arranca (no hay POST).</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Conexiones de Poder:</strong> Asegúrate de que el cable de alimentación del CPU esté bien conectado.</li>
+                            <li><strong>Re-asentar el CPU:</strong> Un procesador mal asentado en su socket puede causar este problema.</li>
+                            <li><strong>Falla de CPU o Placa Madre:</strong> Podría ser una falla catastrófica del componente.</li>
+                        </ul>
+						<img src="../imagenes/soket.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+					
+            </div>
+        </div>
+    </section>
+</main>
+<main>
+    <!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+                <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/H3d9Mg-ZF0M" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+                <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/984bRzpIdN8" 
+    title="YouTube Shorts video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+                </div>
+            </div>
+        </div>
+		<!-- Botón adaptado al tema blanco/negro con azul -->
+<div style="text-align: center; margin-top: 60px;">
+    <button class="epic-button" onClick="showMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h1.11a.5.5 0 0 1 .485.379L2.89 1H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 10H4a.5.5 0 0 1-.491-.408L2.01 2H1a1 1 0 0 1-1-1zm4.14 10a2 2 0 1 0 1.72 3h4.28a2 2 0 1 0 1.72-3H4.14zM5.5 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        Comprar componente
+    </button>
+</div>
+
+<!-- Script para redirigir con mensaje -->
+<script>
+    function showMessage() {
+        alert("Amazon.");
+        setTimeout(() => {
+            window.open("https://aax-us-iad.amazon.com/x/c/JH_CjIQ7xaThk_vyZHoTg-UAAAGX5cxrewEAAAH2AQBvbm9fdHhuX2JpZDcgICBvbm9fdHhuX2ltcDIgICB_OlUo/clv1_CEuOPUxokZA0iHrVVLcO5iL8Xl5jdZUJ8dEl9jGK0M8o8X9pqi6ea_w18nHz9hvWjq0yzpNb3XTPsunP0WQceUYzFASROtTdC2YiWgQ3aVisHKFQ4AYOLZEdHEepyoSmXJOUalC7tdMeWEwmgVz7bV1AckwCRMN0CRVmUax7QwuP3u3MgFIzS1q5d5TuNOspGHpbasDVlJ1bT2hxC9tUMuUFm8yvmtV0DgjzOKVy-i0Vs7d2vLK7GWsuqRqJ-0hcN3jpMffPnUdL6EdDGvh0cDKmVyOVuBLNCd7m6b_pSZUgD1ig-I6A-jeRfQnzGoqH-8wY0e1rf87kz5fkKsLpKswt6-ZKBgBrkpU4wfVsPpln11Z5KUuB8SGc3M8jQXDmah9JnGCvvH8ppSr1AoykS24BZM7zucVmVbcmG3VHnlJ_MfhRt19KAG1Hvpd3Q2koAbqwPfPKm_u0cBUSbzW9h64seRWsqluyb3Ntfr0lnYSUFltD_aimrxjndUtzPorrnvZ40wtDKa0unBuDhQ2HzTTvcRl2QnddGximBg3wEK3_Lx68CwRd3khEWEv4Sj_iavomu_54Xjy4jKdeicYpBDSaDgNozSlg2fwasLeDvB86l6-_4pY7dmXA3xayUIvnL2IDS-A8JRpr8exHBqx25gcnz_3RABF-clY4qc1_2cQxCkIhXTCCyF02nSL4c8AB9FwZy31V-cwf6eAjFVyyE2cjzunsCtW47Jnle2omBAD3rg_yTIxg3jVp7sUbZebOsohNRwPjjlDD3Dj4AXXHMiM9mgf6U1Vonf5Ma8pQYAqY_FQxM-tOuhtjtp6VS0CZeMeZXz926QrElchTfuFSlqr4qV8Su9uvIr3VsuKQrlOC4DjI5U8PxSvOkl6uhR7XuNAFjO4NtzPJMe4xQNomA_uJ8sqIwUpaPCAKMwvNljrXiTV3P1M6YmxtaBbsyUKhvBmhdeqey5K8gcn60G7mdo4XE72BWLzUy1iPVgh9G94EaDR7R2hjWYvryRDwPC0XAiWfqqJ__RU8Ip8__5OfxztinwRJCtCHkQpE8JhWlDtqfWC9ZbCaLQa-V7hDespGTHa_eo_zTQg9K5uAZ8XdvdPlZQ7v7qRZReMpHwxqObOSDkyjC8luuVNHGaWKufXpgOM2bMLMvB8-IcFkkXEne2EOfpP2NlyFL4wxoYHHkZ6TxwKg8XPE7LwlqBJPUdUsHEmRFFj5i2SJRhgQrQfZSu-nz8BVuvxR8BeK25BjBGHCME9vc0ew_kyTkRMjConpSpAtkN63WlXMYoxxVcIIqE4r9YFPpKC94DWPkkeUH-TTc_hgaMfo3OQPkCaIw6IhHa4zZh2clVzDj7MoW2cBuoTUytwu_URId_F_Pu1t5dkjp0SLNwjmodqYMWCeUKhgNzHPVHrzQDTPaiAYZNC-TLG7mxmNNUNq4YcXxvaVgGNOXCl7w5wiE98DdzT2Mh6k_Q4oJnfFmL29og3PNyr3U1H8rTG4eMszxZkWwt04_2wshQDeF32lLWh7jLgonciDv07ORAhLdMJRbJ3mT-MSPg_bteP9AEKzAm-vfJwjkdy18PPN7Y-uPY9wK9UOgNxuWsKibnjD3Y7cSvDzKHMxPx50z__h7as516398mOcy_CcNQqwBzupyDdQvFxfHYuTfwXPN1v2yOEqUmGPtiQRnaM3VGCKgaGBnj7mMFqoPIkfjC_ZGUTANv_uEV5NU9P0aW-qkSnwc3Vfwh2brdJPdmK0lGMB6mLE9dgMPjnBhFmpl-TBwOgIHd1czGvXEsc9uJJWyw275b9yKvc4I8Rax1UkWdTuhl7aYunjeEKbh76rLZef8rUsmNokQsbvksFVthk5HMlLNZ4wp8_2BlODMKmRpFk4DAPPIrE0QBBClDJGvN6EE7S7fxVNGsVDWW188_qgNQ9kMZoIYxqI/https://www.amazon.com/i7-14700K-Desktop-Processor-Integrated-Graphics/dp/B0CGJ41C9W/ref=sxin_17_sbv_search_btf?content-id=amzn1.sym.c8b39f81-ded8-4d75-80c2-6dfa03cbb699%3Aamzn1.sym.c8b39f81-ded8-4d75-80c2-6dfa03cbb699&crid=2C0VPPYK8ASRK&cv_ct_cx=procesador+ryzen+7&keywords=procesador+ryzen+7&pd_rd_i=B0CGJ41C9W&pd_rd_r=be6881af-a021-46e0-b5e0-d1b29a8247a6&pd_rd_w=WwycZ&pd_rd_wg=B6WB9&pf_rd_p=c8b39f81-ded8-4d75-80c2-6dfa03cbb699&pf_rd_r=MEQYRKEFB4P7GN2SH688&qid=1751907068&sbo=9ZOMT9Jm0JH%2Ft%2BWi68iDSA%3D%3D&sprefix=procesador+%2Caps%2C196&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776", "_blank");
+        }, 1000);
+    }
+</script>
+
+<!-- Estilos en azul -->
+<style>
+    .epic-button {
+        background: linear-gradient(135deg, #1e90ff, #007BFF); /* azul degradado */
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .epic-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #339aff, #0069d9);
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    }
+
+    .epic-button:active {
+        animation: shake 0.2s;
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+    </main>
+
+    <footer class="main-footer">
+        <p>Derechos recervados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Refrigeracion (Ventiladores y Disipadores)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Refrigeracion (Ventiladores y Disipadores)</h1>
+                <p class="subtitle">Guia de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/ventilador.jpg" alt="Imagen detallada de Ventiladores y Disipadores">
+            </div>
+            <div class="component-info">
+                <h2>Analisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">Rendimiento Lento por Sobrecalentamiento</button>
+                    <button class="tab-link" data-tab="falla2">Ruido Excesivo / Ventiladores Atascados</button>
+                    <button class="tab-link" data-tab="falla3">PC se apaga Repentinamente</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Sintoma: Rendimiento Lento por Sobrecalentamiento</h3>
+                        <p>Tu computadora o laptop se vuelve lenta y presenta "lag" al ejecutar tareas exigentes como juegos o edicion de video. Esto es el "thermal throttling", donde los componentes reducen su velocidad para evitar daños por calor.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Limpieza de Polvo:</strong> El polvo acumulado en los disipadores y ventiladores es la causa mas comun. Usa aire comprimido para limpiar a fondo las rejillas de ventilacion y las aspas de los ventiladores del CPU, GPU y chasis.</li>
+                            <li><strong>Monitorizar Temperaturas:</strong> Utiliza software como HWMonitor, Speccy o MSI Afterburner (para GPU) para comprobar las temperaturas del CPU y GPU bajo carga. Esto te ayudara a identificar si el sobrecalentamiento es el problema.</li>
+                            <li><strong>Mejorar Flujo de Aire:</strong> Asegurate de que las entradas y salidas de aire del gabinete no esten obstruidas. Considera mejorar la configuracion de los ventiladores del chasis para optimizar el flujo de aire interno.</li>
+                            <li><strong>Ambiente Fresco:</strong> Evita usar la laptop sobre superficies blandas (camas, alfombras) que bloquean la ventilacion. Usa una base refrigeradora si es una laptop.</li>
+                        </ul>
+             <img src="../imagenes/disipador de calor.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+  
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Sintoma: Ruido Excesivo o Ventiladores que No Giran</h3>
+                        <p>Los ventiladores hacen un ruido fuerte y constante, un zumbido, un chirrido, o notas que algunos ventiladores (CPU, GPU, chasis) no estan girando en absoluto.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Inspeccion Visual:</strong> Abre el gabinete y observa si algun ventilador esta atascado por un cable, suciedad o si las aspas estan rotas.</li>
+                            <li><strong>Lubricacion (solo si es viable):</strong> Algunos ventiladores ruidosos pueden beneficiarse de una gota muy pequeña de aceite lubricante para rodamientos (no WD-40) en el centro del eje, si es accesible. Esto es una solucion temporal.</li>
+                            <li><strong>Reemplazo del Ventilador:</strong> Si un ventilador hace mucho ruido, esta atascado o directamente no gira, lo mas efectivo es reemplazarlo por uno nuevo.</li>
+                            <li><strong>Ajustar Velocidad de Ventiladores:</strong> En la BIOS/UEFI o con software como FanControl, puedes ajustar la curva de velocidad de los ventiladores para que sean mas silenciosos en tareas ligeras.</li>
+                        </ul>
+						<img src="../imagenes/lubricacion.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Sintoma: La PC se Apaga o Reinicia Repentinamente</h3>
+                        <p>Tu computadora se apaga de golpe sin previo aviso, especialmente durante juegos o programas pesados. Esto es un mecanismo de seguridad para proteger los componentes de daños permanentes por temperaturas criticas.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Disipador de CPU:</strong> Asegurate de que el disipador del CPU esta correctamente anclado y haciendo buen contacto con el procesador. Un montaje flojo es una causa comun de sobrecalentamiento rapido.</li>
+                            <li><strong>Reaplicar Pasta Termica:</strong> La pasta termica entre el CPU/GPU y su disipador se seca con el tiempo, perdiendo su eficiencia. Retira la pasta vieja con alcohol isopropolico y aplica una nueva capa del tamaño de un guisante.</li>
+                            <li><strong>Revisar Bomba (Refrigeracion Liquida):</strong> Si usas un sistema de refrigeracion liquida (AIO), verifica si la bomba esta funcionando (normalmente sentiras una leve vibracion o escucharas un zumbido). Una bomba fallida es una causa de sobrecalentamiento extremo.</li>
+                            <li><strong>Considerar un Upgrade de Refrigeracion:</strong> Si tu CPU o GPU son de gama alta o si haces overclocking, el disipador de stock podra no ser suficiente. Un disipador de torre mas grande o un sistema de refrigeracion liquida puede ser necesario.</li>
+                        </ul>
+						<img src="../imagenes/disi.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<main>
+    <!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+              <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/hno2dBxBqk8" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+               <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/SfzrLP7LUoE" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+        </div>
+    </section>
+	<!-- Botón adaptado al tema blanco/negro con azul -->
+<div style="text-align: center; margin-top: 60px;">
+    <button class="epic-button" onClick="showMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h1.11a.5.5 0 0 1 .485.379L2.89 1H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 10H4a.5.5 0 0 1-.491-.408L2.01 2H1a1 1 0 0 1-1-1zm4.14 10a2 2 0 1 0 1.72 3h4.28a2 2 0 1 0 1.72-3H4.14zM5.5 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        Comprar componente
+    </button>
+</div>
+
+<!-- Script para redirigir con mensaje -->
+<script>
+    function showMessage() {
+        alert("Amazon.");
+        setTimeout(() => {
+            window.open("https://www.amazon.com/Thermalright-Refined-SE-Technology-AX120/dp/B09LHBFPJ6/ref=sr_1_11?crid=4XMOB764304&dib=eyJ2IjoiMSJ9.5SYQt21B_S_df830cKmsfcnSZ-jFi6ZMXA51gCkcbjxZtSXBlOOoOn3yYSoN96pWu5A4NjI_SnUlncrM4gus67Ys0W0Kug0Vj8FSf8r7i6lchTVhUGULpNGmDk_FpIf1lhtxqFgBFdqG2DjdmKAZu2nQ7Ers1K3yxiTGQOQdgwY_50wtUv9N_jR_eRn7vipRYyiE2v5m_reYyqqCxWLt4n7kT2ENU5VsOGmpGnMEXxI.EqyOlNmxcqV8qJAwARYMrhTsy-JCDrtQsOrmC68Bka4&dib_tag=se&keywords=disipador+cpu&qid=1751908104&sprefix=disi%2Caps%2C245&sr=8-11", "_blank");
+        }, 1000);
+    }
+</script>
+
+<!-- Estilos en azul -->
+<style>
+    .epic-button {
+        background: linear-gradient(135deg, #1e90ff, #007BFF); /* azul degradado */
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .epic-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #339aff, #0069d9);
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    }
+
+    .epic-button:active {
+        animation: shake 0.2s;
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</main>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

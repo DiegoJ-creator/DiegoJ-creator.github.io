@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Placa Madre</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Placa Madre (Motherboard)</h1>
+                <p class="subtitle">Guia de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/placa madre.jpg" alt="Imagen detallada del Procesador">
+            </div>
+            <div class="component-info">
+                <h2>Analisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">PC no enciende / Sin señal</button>
+                    <button class="tab-link" data-tab="falla2">Congelamientos / BSOD Aleatorios</button>
+                    <button class="tab-link" data-tab="falla3">Fallas de Puertos / Componentes</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Sintoma: PC no enciende o no da señal de video</h3>
+                        <p>Al presionar el boton de encendido, el equipo no muestra actividad (ni luces, ni ventiladores) o los ventiladores giran pero no hay señal en la pantalla (no hay POST).</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Conexiones de Alimentacion:</strong> Asegurate de que los cables ATX principal (20/24 pines) y el de CPU (4/8 pines) esten bien conectados a la placa madre.</li>
+                            <li><strong>Revisar Componentes Basicos:</strong> Desconecta todo lo innecesario (tarjetas PCIe, unidades de disco) y deja solo CPU, RAM (un solo modulo si es posible) y fuente de poder. Prueba encender.</li>
+                            <li><strong>Borrar CMOS:</strong> Desconecta la PC de la corriente, quita la bateria CMOS por unos minutos o usa el jumper CLR_CMOS para restablecer la BIOS.</li>
+                            <li><strong>Codigos de Pitidos (Beep Codes):</strong> Si la placa madre emite pitidos, consulta el manual para interpretar el codigo, que puede indicar problemas especificos (RAM, GPU, CPU).</li>
+                        </ul>
+                        <img src="../imagenes/placa madreR.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                   
+  
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Sintoma: Congelamientos o Pantallazos Azules (BSOD) Aleatorios</h3>
+                        <p>El sistema se congela sin razon aparente, experimenta reinicios inesperados o muestra "Pantallazos Azules de la Muerte" con codigos variados, incluso despues de descartar RAM y disco duro.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Actualizar BIOS/UEFI:</strong> Un firmware desactualizado puede causar inestabilidad. Descarga la ultima version del sitio web del fabricante de tu placa madre.</li>
+                            <li><strong>Comprobar Capacitores Hinchados:</strong> Inspecciona visualmente la placa madre en busca de capacitores que esten hinchados, abultados o con fugas, especialmente cerca del CPU. Esto es un signo claro de falla.</li>
+                            <li><strong>Drivers de Chipset:</strong> Asegurate de tener los drivers mas recientes para el chipset de tu placa madre, descargandolos del sitio oficial del fabricante.</li>
+                            <li><strong>Prueba de Extras:</strong> Si los problemas ocurren bajo carga, podria ser un problema de regulacion de voltaje en la placa madre.</li>
+                        </ul>
+						<img src="../imagenes/capacitadores.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Sintoma: Fallas en Puertos USB, SATA, Red o Sonido</h3>
+                        <p>Uno o mas puertos USB no funcionan, los discos duros no son detectados, la conexion de red es intermitente o no hay sonido.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar en BIOS/UEFI:</strong> Asegurate de que los puertos o controladores estan habilitados en la configuracion de la BIOS/UEFI.</li>
+                            <li><strong>Reinstalar Drivers:</strong> Desinstala y vuelve a instalar los drivers especificos del chipset, USB, SATA, LAN o audio desde el sitio web del fabricante de la placa madre.</li>
+                            <li><strong>Inspeccion Visual:</strong> Busca pines doblados o dañados en los puertos USB, SATA, o en el socket del CPU (si aplica a problemas de puertos especificos).</li>
+                            <li><strong>Falla Fisica:</strong> Si persiste, el controlador integrado en la placa madre para esos puertos puede haber fallado, requiriendo reparacion o reemplazo de la placa.</li>
+                        </ul>
+						 <img src="../imagenes/bios.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+               <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/XazWSrWUGtw" 
+    title="YouTube Shorts video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+               <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/W9sXVnhtMgQ" 
+    title="YouTube Shorts video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+        </div>
+    </section>
+	<!-- Botón adaptado al tema blanco/negro con azul -->
+<div style="text-align: center; margin-top: 60px;">
+    <button class="epic-button" onClick="showMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h1.11a.5.5 0 0 1 .485.379L2.89 1H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 10H4a.5.5 0 0 1-.491-.408L2.01 2H1a1 1 0 0 1-1-1zm4.14 10a2 2 0 1 0 1.72 3h4.28a2 2 0 1 0 1.72-3H4.14zM5.5 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        Comprar componente
+    </button>
+</div>
+
+<!-- Script para redirigir con mensaje -->
+<script>
+    function showMessage() {
+        alert("Amazon.");
+        setTimeout(() => {
+            window.open("https://www.amazon.com/MSI-B550M-PRO-VDH-ProSeries-Motherboard/dp/B089D1YG11/ref=sr_1_10?crid=27VL47I098WWP&dib=eyJ2IjoiMSJ9.mVxCd0GjA7fV_AzGmVyuqV624sEGhTssHzDPcUKSMVn3unKE1pGYp1IHl01q_6N16ryyKNFL2xl4pDBr5IY5tZwUP7yj6wbi3kFkTlzfp75qmaNyn9hZxtqSYjgUe9KyY88GEFZGi0iM7tuekmzfsuJQhkLA3pAzLptSxTh4JDjPgvsIsjFbL8jxGStkkjYqa0wMdkkxd15sQg5MYZN85PNSVLuG-YRgayaJFJ_QwqI.gyzYIXCKUD_giq_KxtB60x19gw7UQakShd596B-cqik&dib_tag=se&keywords=placa+madre+pc&qid=1751907871&sprefix=placa+madre%2Caps%2C169&sr=8-10", "_blank");
+        }, 1000);
+    }
+</script>
+
+<!-- Estilos en azul -->
+<style>
+    .epic-button {
+        background: linear-gradient(135deg, #1e90ff, #007BFF); /* azul degradado */
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .epic-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #339aff, #0069d9);
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    }
+
+    .epic-button:active {
+        animation: shake 0.2s;
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</main>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

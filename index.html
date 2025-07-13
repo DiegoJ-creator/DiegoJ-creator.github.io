@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="imagenes/logo.png" type="image/png" sizes="16x16">
+    <title>Componentes de la Computadora | Proyecto Final</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="hero-section">
+        <div class="background-slider">
+            </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Componentes de la Computadora</h1>
+            <p class="subtitle">Una guía interactiva de hardware para Laptops y PC de Escritorio</p>
+
+            <p id="dynamic-text" class="dynamic-text"></p>
+
+            <div class="controls-container">
+                <div class="search-wrapper">
+                    <input type="text" id="buscador" placeholder="Buscar componente">
+                </div>
+                <button id="theme-toggle" title="Cambiar tema">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+
+        <section id="laptop">
+            <h2 data-aos="fade-right">Componentes de una Laptop</h2>
+            <div class="componentes-grid">
+                <div class="componente-card" data-aos="fade-up" data-nombre="procesador cpu central processing unit">
+                    <img src="imagenes/tipos-procesadores-intel.jpg" alt="Imagen de un Procesador" width="1280" height="720">
+                    <div class="card-content">
+                        <h3>Procesador (CPU)</h3>
+                        <p>El cerebro de la computadora. Ejecuta instrucciones y procesa los datos de los programas.</p>
+                        <a href="componentes/procesador.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="memoria ram random access memory">
+                    <img src="imagenes/raN.jpg" alt="Imagen de Memoria RAM" width="1200" height="800">
+                    <div class="card-content">
+                        <h3>Memoria RAM</h3>
+                        <p>Almacenamiento temporal para datos que la computadora esta usando activamente.</p>
+                        <a href="componentes/ram.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="disco duro ssd hdd almacenamiento">
+                    <img src="imagenes/disco.jpg" alt="Imagen de Disco Duro / SSD" width="1920" height="1280">
+                    <div class="card-content">
+                        <h3>Disco Duro / SSD</h3>
+                        <p>Almacenamiento a largo plazo para tu sistema operativo, programas y archivos personales.</p>
+                        <a href="componentes/disco-duro.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="bateria power">
+                    <img src="imagenes/baterias-laptops(2).jpg" alt="Imagen de una Bateria de Laptop" width="2440" height="1640">
+                    <div class="card-content">
+                        <h3>Bateria</h3>
+                        <p>Proporciona energia a la laptop, permitiendo su uso sin estar conectada a la corriente.</p>
+                        <a href="componentes/bateria.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="escritorio">
+            <h2 data-aos="fade-right">Componentes de una PC de Escritorio</h2>
+            <div class="componentes-grid">
+                <div class="componente-card" data-aos="fade-up" data-nombre="placa madre motherboard mobo">
+                    <img src="imagenes/placa madre.jpg" alt="Imagen de una Placa Madre" width="1485" height="900">
+                    <div class="card-content">
+                        <h3>Placa Madre</h3>
+                        <p>La tarjeta madre es el componente que conecta y coordina todas las partes de la computadora para que funcionen juntas.
+</p>
+                        <a href="componentes/placa-madre.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="tarjeta grafica video gpu">
+                    <img src="imagenes/tarjeta grafica.jpg" alt="Imagen de una Tarjeta Grafica" width="1500" height="1040">
+                    <div class="card-content">
+                        <h3>Tarjeta Grafica (GPU)</h3>
+                        <p>Procesa y renderiza imagenes, videos y animaciones para mostrarlos en la pantalla.</p>
+                        <a href="componentes/gpu.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="ventiladores enfriamiento cooler">
+                    <img src="imagenes/ventilador.jpg" alt="Imagen de Ventiladores" width="1024" height="514">
+                    <div class="card-content">
+                        <h3>Ventiladores / Enfriamiento</h3>
+                        <p>Disipan el calor generado por los componentes para mantener una temperatura de operacion segura.</p>
+                        <a href="componentes/ventiladores.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+                <div class="componente-card" data-aos="fade-up" data-nombre="puertos usb hdmi ethernet">
+                    <img src="imagenes/puertos 1.png" alt="Imagen de Puertos" width="571" height="181">
+                    <div class="card-content">
+                        <h3>Puertos de Conexion</h3>
+                        <p>Interfaces para conectar perifericos como teclados, ratones, monitores y dispositivos USB.</p>
+                        <a href="componentes/puertos.html" class="btn-details">Ver fallas y soluciones</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <a href="#" id="back-to-top" title="Volver arriba">&uarr;</a>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado Ponce. &copy;2025👀💪</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

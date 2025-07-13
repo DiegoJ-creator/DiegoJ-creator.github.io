@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Disco Duro / SSD</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Disco Duro / SSD</h1>
+                <p class="subtitle">Guia de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/disco principal.jpg" alt="Imagen detallada del Componente">
+            </div>
+            <div class="component-info">
+                <h2>Analisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">Rendimiento Lento Extremo</button>
+                    <button class="tab-link" data-tab="falla2">Ruido Anormal (solo HDD)</button>
+                    <button class="tab-link" data-tab="falla3">Sistema no arranca / Errores</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Sintoma: Rendimiento Lento Extremo</h3>
+                        <p>El sistema operativo y las aplicaciones tardan una eternidad en cargar. Transferir archivos es increiblemente lento. Esto es mas notorio en discos duros antiguos o saturados, pero tambien puede ocurrir en SSDs casi llenos.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Liberar Espacio:</strong> Elimina archivos innecesarios, desinstala programas que no uses y vacia la papelera de reciclaje.</li>
+                            <li><strong>Desfragmentar (solo HDD):</strong> Si tienes un disco duro mecanico, desfragmentarlo puede mejorar el rendimiento. Nunca desfragmentes un SSD!</li>
+                            <li><strong>Comprobar Estado de Salud:</strong> Utiliza herramientas como CrystalDiskInfo para verificar el estado SMART del disco.</li>
+                            <li><strong>Actualizar a SSD:</strong> Si aun usas un HDD, migrar a un SSD es la mejora de rendimiento mas significativa que puedes hacer.</li>
+                        </ul>
+  <img src="../imagenes/disco duro.png" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+  <img src="../imagenes/disco mantenimiento.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+  
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Sintoma: Ruido Anormal (solo HDD)</h3>
+                        <p>Escuchas clics, zumbidos, chirridos o un ruido constante de raspado que no suelas oir. Esto es un fuerte indicio de que un disco duro mecanico esta fallando.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Hacer Copia de Seguridad Inmediata:</strong> Si escuchas ruidos inusuales, tu disco esta a punto de fallar. Haz una copia de seguridad de todos tus datos importantes de inmediato!</li>
+                            <li><strong>Reemplazar el Disco:</strong> Un HDD que hace ruidos anormales necesita ser reemplazado.</li>
+                            <li><strong>Evitar Manipulacion:</strong> No intentes abrir el disco duro, ya que podras causar mas daño y perder la posibilidad de recuperacion de datos profesional.</li>
+                        </ul>
+						<img src="../imagenes/disco laptop.jpeg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Sintoma: El sistema no arranca / Errores de lectura</h3>
+                        <p>La computadora muestra mensajes como "No bootable device found", "Operating System not found", o se congela durante el arranque. Puedes ver errores de disco en el Visor de Eventos de Windows o al intentar acceder a archivos.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Conexiones:</strong> Asegurate de que los cables de datos (SATA) y alimentacion estan bien conectados tanto al disco como a la placa base/fuente de poder.</li>
+                            <li><strong>Revisar Orden de Arranque (BIOS/UEFI):</strong> Entra a la BIOS/UEFI y verifica que el disco correcto esta seleccionado como primera opcion de arranque.</li>
+                            <li><strong>Reinstalar Sistema Operativo:</strong> Si el disco esta fisicamente bien, pero el sistema de archivos esta corrupto, una reinstalacion del SO puede ser necesaria (previo respaldo de datos).</li>
+                            <li><strong>Considerar reemplazo:</strong> Si ninguna de las soluciones anteriores funciona y las herramientas de diagnostico muestran errores, es probable que el disco haya fallado y necesite ser reemplazado.</li>
+                        </ul>
+						<img src="../imagenes/hdd.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+                <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/ZjVx_cGrlLQ" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+                <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/KQRm-oWkFbM" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+        </div>
+    </section>
+	<!-- Botón adaptado al tema blanco/negro con azul -->
+<div style="text-align: center; margin-top: 60px;">
+    <button class="epic-button" onClick="showMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h1.11a.5.5 0 0 1 .485.379L2.89 1H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 10H4a.5.5 0 0 1-.491-.408L2.01 2H1a1 1 0 0 1-1-1zm4.14 10a2 2 0 1 0 1.72 3h4.28a2 2 0 1 0 1.72-3H4.14zM5.5 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        Comprar componente
+    </button>
+</div>
+
+<!-- Script para redirigir con mensaje -->
+<script>
+    function showMessage() {
+        alert("Amazon.");
+        setTimeout(() => {
+            window.open("https://www.amazon.com/Crucial-BX500-NAND-2-5-Inch-Internal/dp/B07YD579WM/ref=sr_1_3?crid=3RU3KXKZIMOFW&dib=eyJ2IjoiMSJ9.KKIDiiszDRSczi79ieeS5Utq288joi3PsBZdTJBkigZwHLO5y_DR-owX_w--5dX-apCNP5wqna1eIGga5ghpOhZFNVZfBwlXlwOg2X3m9ifJtRJehOsEezpB1YtKS7hALpukEUj0MdG52dyH7rlMMjjBVVJ_5MFfYEgfOP2OazGX6pxF_8xcH3ftl95O466ggA7pj1js2Z-dj_uXSJuAJaAQPLt5B4F99XZYz8iX9Yg.m5mZTCQmyi4-IQnqspMwjL4ZMYX4V3HmhW_tCxb-zLU&dib_tag=se&keywords=disco+duro+ssd+1tb&qid=1751907601&sprefix=disco+duro+ssd%2Caps%2C157&sr=8-3", "_blank");
+        }, 1000);
+    }
+</script>
+
+<!-- Estilos en azul -->
+<style>
+    .epic-button {
+        background: linear-gradient(135deg, #1e90ff, #007BFF); /* azul degradado */
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .epic-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #339aff, #0069d9);
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    }
+
+    .epic-button:active {
+        animation: shake 0.2s;
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</main>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

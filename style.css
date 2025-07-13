@@ -1,0 +1,539 @@
+/*
+==============================================
+    PROYECTO: COMPONENTES DE LA COMPUTADORA
+    CSS por Gemini AI - 2025
+   ============================================== */
+
+/* ===== VARIABLES Y TEMA ===== */
+:root {
+    /* Tema Claro */
+    --bg-color: #f4f7f9;
+    --text-color: #1a1a1a;
+    --card-bg: #ffffff;
+    --header-bg: #ffffff;
+    --accent-color: #007BFF;
+    --accent-glow: rgba(0, 123, 255, 0.5);
+    --border-color: #e1e1e1;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Variables CSS que se establecerán dinámicamente por JavaScript */
+    --total-slider-images: 6; /* Fallback: si JS no carga, asumimos 6 imágenes en total (duplicadas) */
+    --original-image-count: 3; /* Fallback: si JS no carga, asumimos 3 imágenes originales */
+    --animation-duration: 40s; /* Fallback: duración por defecto de la animación */
+}
+
+[data-theme="dark"] {
+    /* Tema Oscuro */
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --card-bg: #161b22;
+    --header-bg: #161b22;
+    --accent-color: #00aaff;
+    --accent-glow: rgba(0, 170, 255, 0.5);
+    --border-color: #30363d;
+    --shadow-color: rgba(0, 170, 255, 0.1);
+}
+
+/* ===== RESET Y ESTILOS GLOBALES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== PRELOADER ===== */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--accent-color);
+    animation: spin 1s ease infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== ESTILOS DEL HERO SECTION ===== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* ALTURA AJUSTADA: Ocupa el 85% de la altura de la ventana. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Background Slider - Contiene las imágenes */
+.background-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Ancho dinámico: 100vw por cada imagen duplicada */
+    width: calc(100vw * var(--total-slider-images)); 
+    height: 100%;
+    display: flex;
+    /* Duración dinámica de la animación, controlada por JS */
+    animation: slideBackground var(--animation-duration) linear infinite; 
+    z-index: 0; 
+}
+
+.background-slider img {
+    width: 100vw; /* Cada imagen toma el ancho completo del viewport */
+    height: 100%;
+    object-fit: cover; /* Cubre el área sin distorsión */
+    filter: blur(3px) brightness(0.7); /* Ligero desenfoque y oscurecimiento */
+    flex-shrink: 0; /* Evita que las imágenes se encojan */
+}
+
+/* Keyframe Animation for Background Slider */
+@keyframes slideBackground {
+    0% {
+        transform: translateX(0); /* Posición inicial */
+    }
+    100% {
+        /* Mover el ancho de las imágenes originales para un ciclo perfecto */
+        transform: translateX(calc(-100vw * var(--original-image-count)));
+    }
+}
+
+/* Overlay para mejor contraste */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro transparente */
+    z-index: 1; /* Encima de las imágenes, debajo del texto */
+}
+
+/* Hero Content - Título, subtítulo y controles */
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 2; /* Encima del overlay y las imágenes */
+    padding: 20px; /* Padding general para el contenido del hero */
+    width: 90%; /* Para que el contenido respete el ancho del container */
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Permite que el contenido ocupe toda la altura del hero */
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif; /* Usando Montserrat para el H1 del Hero */
+    font-size: 3.5rem; /* Tamaño grande para el título del Hero */
+    margin: 0 0 10px 0; /* Ajuste de margen inferior */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para el texto */
+    letter-spacing: 2px;
+    color: #fff; /* Asegura que el color del título sea blanco */
+}
+
+.hero-content .subtitle {
+    font-family: 'Playfair Display', serif; /* Usando Playfair Display para el subtítulo */
+    font-size: 1.5rem;
+    margin-top: 0; /* Quitamos el margin-top para que esté más cerca del H1 */
+    margin-bottom: 30px; /* Más espacio debajo del subtítulo */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    color: #eee; /* Color ligeramente más claro que el texto principal */
+}
+
+/* Nuevo estilo para el texto dinámico */
+.dynamic-text {
+    font-family: 'Montserrat', sans-serif; /* Puedes ajustar la fuente */
+    font-size: 2.2rem; /* Tamaño de fuente para el texto dinámico */
+    font-weight: 700; /* Negrita para que resalte */
+    color: #fff; /* Blanco */
+    margin-top: 20px; /* Espacio superior */
+    min-height: 2.5rem; /* Evita que el contenedor colapse mientras el texto se anima */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    /* Animación de cursor de máquina de escribir */
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    white-space: nowrap; /* Evita el salto de línea */
+    overflow: hidden; /* Oculta el texto que se está revelando */
+}
+
+/* Animación del cursor */
+.dynamic-text.typing-active {
+    animation: blinkCaret .75s step-end infinite;
+}
+
+@keyframes blinkCaret {
+    from, to { border-color: transparent }
+    50% { border-color: rgba(255, 255, 255, .75); }
+}
+
+/* Estilos de los controles (buscador y tema) dentro del hero-content */
+.controls-container {
+    margin-top: 20px; /* Espacio superior para los controles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+.search-wrapper input {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color); /* Usará el color de fondo del tema */
+    color: var(--text-color); /* Usará el color de texto del tema */
+    font-size: 1rem;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+.search-wrapper input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+#theme-toggle:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* ===== SECCIONES Y GRID DE COMPONENTES ===== */
+section {
+    padding: 60px 0;
+}
+section h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+.componentes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* ===== TARJETA DE COMPONENTE ===== */
+.componente-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.componente-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+.componente-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content {
+    padding: 25px;
+}
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.card-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #aaa;
+}
+.btn-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-details:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+[data-theme="dark"] .btn-details:hover {
+    background-color: #00c3ff;
+}
+
+/* ===== BOTÓN VOLVER ARRIBA ===== */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    border-radius: 50%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 999;
+}
+#back-to-top.show {
+    display: block;
+    opacity: 1;
+}
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    color: #888;
+}
+
+/*
+===================================================================
+    ===== ESTILOS PÁGINA DE DETALLES DE COMPONENTE (CON AJUSTES) =====
+   =================================================================== */
+.componente-header {
+    padding: 20px 0;
+    background: var(--card-bg);
+}
+
+.componente-header .header-container-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.componente-header .header-title-wrapper {
+    text-align: center;
+    flex-grow: 1;
+}
+.componente-header .btn-back {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+.componente-header #theme-toggle {
+    padding: 8px;
+    flex-shrink: 0;
+}
+
+.component-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+.component-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 300px;
+}
+
+.component-image img {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.component-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+/* Sistema de Pestañas */
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.tab-link:hover {
+    color: var(--accent-color);
+}
+.tab-link.active {
+    border-bottom-color: var(--accent-color);
+    font-weight: 600;
+    color: var(--accent-color);
+}
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+.tab-pane.active {
+    display: block;
+}
+.tab-pane h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--text-color); }
+.tab-pane h4 { font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px; color: var(--accent-color); }
+.tab-pane ul { list-style-type: '? '; padding-left: 20px; }
+.tab-pane li { margin-bottom: 10px; }
+.img-solucion {
+    margin-top: 20px;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== DISEÑO RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .component-details {
+        grid-template-columns: 1fr;
+    }
+    .component-image {
+        height: auto;
+    }
+    .component-image img {
+        height: auto;
+        object-fit: contain;
+    }
+    /* Ajustes para el Hero en pantallas pequeñas */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    .hero-section {
+        height: 70vh; /* Ligeramente más pequeño en tablets */
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .dynamic-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .controls-container { flex-direction: column; }
+    .search-wrapper input { width: 100%; }
+    .componentes-grid { grid-template-columns: 1fr; }
+
+    /* Ajustes para el header de componente en móviles */
+    .componente-header .header-title-wrapper h1 { font-size: 1.5rem; }
+    .componente-header .header-title-wrapper .subtitle { display: none; }
+
+    /* Ajustes para el Hero en móviles */
+    .hero-content h1 {
+        font-size: 1.8rem; /* Más pequeño para móviles */
+    }
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+    .hero-section {
+        height: 60vh; /* Aún más pequeño en móviles */
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .dynamic-text {
+        font-size: 1.4rem; /* Más pequeño para móviles */
+        min-height: 2rem;
+    }
+}

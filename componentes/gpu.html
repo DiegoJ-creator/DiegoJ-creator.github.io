@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallas y Soluciones: Tarjeta Grafica (GPU)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body class="page-componente">
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="componente-header">
+        <div class="container header-container-flex">
+            <a href="../index.html" class="btn-back">&larr; Volver</a>
+            <div class="header-title-wrapper">
+                <h1>Tarjeta Grafica (GPU)</h1>
+                <p class="subtitle">Guia de fallas comunes y posibles soluciones</p>
+            </div>
+            <button id="theme-toggle" title="Cambiar tema">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="component-details">
+            <div class="component-image">
+                <img src="../imagenes/tarjeta grafica.jpg" alt="Imagen detallada de Tarjeta Gr�fica">
+            </div>
+            <div class="component-info">
+                <h2>Analisis de Problemas</h2>
+                <div class="tab-buttons">
+                    <button class="tab-link active" data-tab="falla1">Artefactos / Pantalla Negra</button>
+                    <button class="tab-link" data-tab="falla2">Sobrecalentamiento / Ventiladores</button>
+                    <button class="tab-link" data-tab="falla3">Rendimiento bajo en juegos</button>
+                </div>
+                <div class="tab-content">
+                    <div id="falla1" class="tab-pane active">
+                        <h3>Sintoma: Artefactos Visuales o Pantalla Negra/Sin Señal</h3>
+                        <p>La pantalla muestra lineas, puntos de colores, cuadrados o texturas corruptas (artefactos), se pone negra sin razan, o no hay señal de video al encender el PC.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Verificar Conexiones:</strong> Asegurate de que el cable de video (HDMI, DisplayPort, DVI) este bien conectado tanto a la GPU como al monitor. Revisa tambien los cables de alimentacion PCIe de la tarjeta grafica.</li>
+                            <li><strong>Re-asentar la GPU:</strong> Apaga el PC, desconecta la corriente y vuelve a encajar firmemente la tarjeta grafica en su ranura PCIe. Asegurate de que los clips de seguridad esten bien puestos.</li>
+                            <li><strong>Probar con Otra Salida de Video/Monitor:</strong> Intenta conectar a otra salida de video de la GPU o a un monitor diferente para descartar un problema del monitor o el cable.</li>
+                            <li><strong>Modo Seguro y Drivers:</strong> Inicia Windows en Modo Seguro y desinstala los drivers de la GPU con DDU (Display Driver Uninstaller). Luego, instala la version mas reciente y estable desde la web del fabricante (NVIDIA, AMD).</li>
+                        </ul>
+                         <img src="../imagenes/conexion tarjeta.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+  
+                    </div>
+                    <div id="falla2" class="tab-pane">
+                        <h3>Sintoma: Sobrecalentamiento y Problemas de Ventiladores</h3>
+                        <p>Los juegos se cierran, hay caidas de rendimiento repentinas, los ventiladores de la GPU giran muy rapido y hacen mucho ruido, o la tarjeta se siente muy caliente al tacto.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Limpieza de Polvo:</strong> Usa aire comprimido para limpiar los disipadores y ventiladores de la tarjeta grafica. Un exceso de polvo impide una correcta disipacion del calor.</li>
+                            <li><strong>Monitorizar Temperaturas:</strong> Utiliza software como HWMonitor o MSI Afterburner para ver las temperaturas de la GPU bajo carga.</li>
+                            <li><strong>Ajustar Curva de Ventiladores:</strong> Con programas como MSI Afterburner, puedes crear una curva de ventilacion personalizada para que los ventiladores trabajen de manera mas eficiente.</li>
+                            <li><strong>Reemplazar Pasta Termica/Pads:</strong> Si la GPU es antigua o ha estado trabajando a altas temperaturas, la pasta termica puede estar seca y necesitar un reemplazo.</li>
+                        </ul>
+						<img src="../imagenes/limpieza tarjeta grafica.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                    <div id="falla3" class="tab-pane">
+                        <h3>Sintoma: Rendimiento Inesperadamente Bajo en Juegos/Aplicaciones</h3>
+                        <p>Los juegos o aplicaciones que antes funcionaban fluidamente ahora tienen un bajo framerate, stuttering (micro-cortes), o no alcanzan el rendimiento esperado para tu GPU.</p>
+                        <h4>Soluciones y Recomendaciones:</h4>
+                        <ul>
+                            <li><strong>Actualizar Drivers de GPU:</strong> Asegurate de tener los ultimos drivers graficos instalados. Estos suelen incluir optimizaciones de rendimiento para juegos recientes.</li>
+                            <li><strong>Configuracion del Juego/Aplicacion:</strong> Reduce la calidad grafica o la resolucion dentro del juego. A veces, una actualizacion del juego puede cambiar la demanda de recursos.</li>
+                            <li><strong>Verificar Uso de GPU:</strong> Usa el Administrador de Tareas o herramientas como MSI Afterburner para ver si la GPU esta siendo utilizada al 100% o si hay otros componentes (CPU, RAM) causando un cuello de botella.</li>
+                            <li><strong>Problemas de Fuente de Poder:</strong> Una fuente de poder insuficiente o defectuosa puede no suministrar energia constante a la GPU, causando caidas de rendimiento.</li>
+                        </ul>
+						<img src="../imagenes/limpieza.jpg" alt="Limpiando un ventilador" class="img-solucion" width="1200" height="800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+	<main>
+    <!-- Aquí todo tu contenido anterior -->
+
+    <!-- Sección con dos videos centrados -->
+    <section id="videos-finales" style="text-align: center; margin-top: 50px;">
+        <h2 style="margin-bottom: 20px;">Videos Explicativos</h2>
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <!-- Primer video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+              <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/1A01g3gRtUQ" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+
+            <!-- Segundo video -->
+            <div style="width: 400px; height: 225px; box-shadow: 0 0 12px rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;">
+               <iframe width="400" height="225" 
+    src="https://www.youtube.com/embed/GI0ijn7sSEA" 
+    title="YouTube video"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
+            </div>
+        </div>
+    </section>
+	<!-- Botón adaptado al tema blanco/negro con azul -->
+<div style="text-align: center; margin-top: 60px;">
+    <button class="epic-button" onClick="showMessage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" style="margin-right: 8px;" viewBox="0 0 16 16">
+            <path d="M0 1a1 1 0 0 1 1-1h1.11a.5.5 0 0 1 .485.379L2.89 1H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 10H4a.5.5 0 0 1-.491-.408L2.01 2H1a1 1 0 0 1-1-1zm4.14 10a2 2 0 1 0 1.72 3h4.28a2 2 0 1 0 1.72-3H4.14zM5.5 13a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+        </svg>
+        Comprar componente
+    </button>
+</div>
+
+<!-- Script para redirigir con mensaje -->
+<script>
+    function showMessage() {
+        alert("Amazon.");
+        setTimeout(() => {
+            window.open("https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo2ODk1NTcyNTAwMzU1NzQ4OjE3NTE5MDc5ODc6c3BfYXRmOjMwMDc3NjQ3NTQzOTIwMjo6MDo6&url=%2FGPVHOSO-Radeon-RX-590-DVI-Output%2Fdp%2FB0FB2PQ877%2Fref%3Dsr_1_1_sspa%3Fcrid%3D39DDRFRY7GLTV%26dib%3DeyJ2IjoiMSJ9.K6WhUgTh209zA_vHyuyK_V6oBdeSwbcy7Chf8osWkGDvWLoudv5mJJ0Lfvv0fpH2l3awWqseOx4MCImmORTSDqMq63MuDCjUHeZQDEWGbYDzr14AAm79u2IR97-MrGyYWteUdJLfSyH7UygR5FQqV0h9admihGZSv8r3eaPqhDqJhXwcOLh5weRTbMDoGvrRA6kSXiBK3bs3indJLu4ZcHn0fcTNVBAMDGToM-QxEZ0.1zadfeDaZGydBynfJvjhF7dV2M-TdMTO5eqrEBcihjY%26dib_tag%3Dse%26keywords%3Dtarjeta%2Bgr%25C3%25A1fica%26qid%3D1751907987%26sprefix%3Dtarjet%2B%252Caps%252C372%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1", "_blank");
+        }, 1000);
+    }
+</script>
+
+<!-- Estilos en azul -->
+<style>
+    .epic-button {
+        background: linear-gradient(135deg, #1e90ff, #007BFF); /* azul degradado */
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .epic-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #339aff, #0069d9);
+        box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+    }
+
+    .epic-button:active {
+        animation: shake 0.2s;
+    }
+
+    @keyframes float {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        50% { transform: translateX(4px); }
+        75% { transform: translateX(-4px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</main>
+
+    <footer class="main-footer">
+        <p>Derechos reservados: Diego Jose Salgado. &copy;2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
